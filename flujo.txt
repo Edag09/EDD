@@ -1,0 +1,6 @@
+"epico", "barco1"
+"epico", "barco2"
+"Legendario", "barco2"
+"Legendario", "barco4"
+"comun", "barco6"
+"epico", "barco8"
