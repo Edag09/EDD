@@ -11,7 +11,7 @@ private:
 public:
     Lista2();
     bool vacio();
-    void InsertarNodo(int& id);
+    void InsertarNodo(int& id, string& Nombre, string& Precio, string& src);
 };
 
 Lista2::Lista2()
@@ -27,9 +27,12 @@ bool Lista2::vacio(){
     }
 }
 
-void Lista2::InsertarNodo(int& id){
+void Lista2::InsertarNodo(int& id, string& Nombre, string& Precio, string& src){
     NodoSegundo* nuevo = new NodoSegundo();
     nuevo->Id = id;
+    nuevo->Nombre = Nombre;
+    nuevo->Precio = Precio;
+    nuevo->src = src;
     if (primero==NULL)
     {
         primero = nuevo;

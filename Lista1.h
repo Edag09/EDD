@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iostream>
 using namespace std;
 #include "Nodo1.h"
 
@@ -11,9 +10,9 @@ private:
 public:
     Lista1();
     bool vacio();
-    void InsertarNodo(int& id);
-    void InsertNodoSecond(int& id1, int& id2);
-    bool Validar(int& id);
+    void InsertarNodo(string& id);
+    void InsertNodoSecond(string& id1, int& id2, string& Nombre, string& Precio, string& src);
+    bool Validar(string& id);
     void Desplegar();
 };
 
@@ -29,9 +28,9 @@ bool Lista1::vacio(){
     }
 }
 
-void Lista1::InsertarNodo(int& id){
+void Lista1::InsertarNodo(string& id){
     NodoEnlazado* nuevo = new NodoEnlazado();
-    nuevo->Id = id;
+    nuevo->Categoria = id;
     if (primero==NULL)
     {
         primero = nuevo;
@@ -46,29 +45,29 @@ void Lista1::InsertarNodo(int& id){
     }    
 }
 
-void Lista1::InsertNodoSecond(int& id1, int& id2){
+void Lista1::InsertNodoSecond(string& id1, int& id2, string& Nombre, string& Precio, string& src){
     NodoEnlazado* auxiliar = new NodoEnlazado();
     auxiliar = primero;
     //cout<<"Hola "<<endl;
     while (auxiliar!=NULL)
     {
-        if (auxiliar->Id!=id1)
+        if (auxiliar->Categoria!=id1)
         {
             auxiliar = auxiliar->siguiente;
         }else
         {
-            auxiliar->Segunda->InsertarNodo(id2);
+            auxiliar->Segunda->InsertarNodo(id2, Nombre, Precio, src);
             break;
         }   
     }
 }
 
-bool Lista1::Validar(int& id){
+bool Lista1::Validar(string& id){
     NodoEnlazado* auxiliar = new NodoEnlazado();
     auxiliar = primero;
     while (auxiliar!=NULL)
     {
-        if (auxiliar->Id!=id)
+        if (auxiliar->Categoria!=id)
         {
             auxiliar = auxiliar->siguiente;
         }else
@@ -83,7 +82,7 @@ void Lista1::Desplegar(){
     NodoEnlazado* auxiliar = new NodoEnlazado();
     auxiliar = primero;
     while(auxiliar!=NULL){
-        cout<<auxiliar->Id<<endl;
+        cout<<auxiliar->Categoria<<endl;
         auxiliar = auxiliar->siguiente;
     }
 }

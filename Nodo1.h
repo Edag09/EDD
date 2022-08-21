@@ -5,7 +5,7 @@ using namespace std;
 
 class NodoEnlazado{
 public:
-    int Id;
+    string Categoria;
     NodoEnlazado* siguiente;
     NodoEnlazado* atras;
     Lista2* Segunda;
@@ -15,7 +15,7 @@ public:
 };
 
 NodoEnlazado::NodoEnlazado() {
-    this->Id = 0;
+    this->Categoria = "";
     this->siguiente = NULL;
     this->atras = NULL;
     this->Segunda = new Lista2();
