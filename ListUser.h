@@ -13,7 +13,7 @@ private:
 public:
     ListUser();
     bool vacio();
-    void insertUser(string& nick, string& pass, string& moneda, string& edad);
+    void insertUser(string& nick, string& pass, int& moneda, int& edad);
     void DisplayUser();
 };
 
@@ -31,7 +31,7 @@ bool ListUser::vacio(){
     }
 }
 
-void ListUser::insertUser(string& nick, string& pass, string& moneda, string& edad){
+void ListUser::insertUser(string& nick, string& pass, int& moneda, int& edad){
     NodeUser* User = new NodeUser(nick, pass, moneda, edad);
 
     if (vacio())
